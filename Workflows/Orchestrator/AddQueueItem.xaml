@@ -1,0 +1,166 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AddQueueItem" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Dict_Output" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>AddQueueItem_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AddQueueItem" sap:VirtualizedContainerService.HintSize="1192,592.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start to adding queue Item&quot;]" />
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="TVC Process" sap:VirtualizedContainerService.HintSize="416,228.66666666666666" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_Config(in_TransactionItem(&quot;Payer Name&quot;).ToString.Trim).ToString.Trim]" Reference="[in_TransactionItem(&quot;Invoice Number&quot;).ToString]">
+      <ui:AddQueueItem.ItemInformation>
+        <InArgument x:TypeArguments="x:String" x:Key="WQ Name">[in_TransactionItem("WQ Name").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Claim Type">[in_TransactionItem("Claim Type").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Service Date">[in_TransactionItem("Service Date").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Invoice Number">[in_TransactionItem("Invoice Number").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Plan Name">[in_TransactionItem("Plan Name").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Payer Name">[in_TransactionItem("Payer Name").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Plan ID">[in_TransactionItem("Plan ID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="External Code">[in_TransactionItem("External Code").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Member ID">[in_TransactionItem("Member ID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Account ID">[in_TransactionItem("Patient Account ID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Status">[in_TransactionItem("Status").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Billed Amount">[in_TransactionItem("Billed Amount").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Outstanding Amount">[in_TransactionItem("Outstanding Amount").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Last Worked Date">[in_TransactionItem("Last Worked Date").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Post Date">[in_TransactionItem("Post Date").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Quantity">[in_TransactionItem("Quantity").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Modifier">[in_TransactionItem("Modifier").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Plan Phone">[in_TransactionItem("Plan Phone").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Remittance Date">[if(in_Dict_Output.Any(Function(x) x.Key = "Remittance Date"),in_Dict_Output("Remittance Date").ToString,String.Empty)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ICN">[If(in_Dict_Output.Any(Function(x) x.Key = "ICN"),in_Dict_Output("ICN").ToString,String.Empty)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Claim Number">[if(in_Dict_Output.Any(Function(x) x.Key = "Claim Number"),in_Dict_Output("Claim Number").ToString,String.Empty)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Name">[in_Dict_Output("Patient Name").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient DOB">[in_Dict_Output("Patient DOB").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Address">[in_Dict_Output("Patient Address").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient City">[in_Dict_Output("Patient City").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient State">[in_Dict_Output("Patient State").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Zip Code">[in_Dict_Output("Patient Zip Code").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Phone">[in_Dict_Output("Patient Phone").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Insurance Number">[in_Dict_Output("Insurance Number").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Referring Provider">[in_Dict_Output("Referring Provider").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Referring Provider NPI">[in_Dict_Output("Referring Provider NPI").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Resubmission Code">[in_Dict_Output("Resubmission Code").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Prior Auth Number">[in_Dict_Output("Prior Auth Number").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Original Ref Number">[in_Dict_Output("Original Ref Number").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Rendering NPI">[in_Dict_Output("Rendering NPI").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Group NPI">[in_Dict_Output("Group NPI").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TAX ID">[in_Dict_Output("TAX ID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Account Number">[in_Dict_Output("Patient Account Number").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Total Charge">[in_Dict_Output("Total Charge").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Amount Paid">[in_Dict_Output("Amount Paid").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Physician Signature">[in_Dict_Output("Physician Signature").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Taxonomy Code">[in_Dict_Output("Taxonomy Code").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Patient Gender">[in_Dict_Output("Patient Gender").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Hospitalization Date From">[in_Dict_Output("Hospitalization Date From").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Hospitalization Date To">[in_Dict_Output("Hospitalization Date To").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ICD Codes">[in_Dict_Output("ICD Codes").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="EPIC EOB LineItems">[JsonConvert.SerializeObject(If(in_Dict_Output.Any(Function(x) x.Key = "EPIC_EOB_LineItems"),in_Dict_Output("EPIC_EOB_LineItems"),String.Empty))]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="HCFA LineItems">[JsonConvert.SerializeObject(in_Dict_Output("HCFA_LineItems"))]</InArgument>
+      </ui:AddQueueItem.ItemInformation>
+    </ui:AddQueueItem>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Queue Item added successfully&quot;]" />
+  </Sequence>
+</Activity>
